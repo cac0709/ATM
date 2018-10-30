@@ -27,13 +27,12 @@ public class LoginActivity extends AppCompatActivity {
         username = ed_userid.getText().toString();
         password = ed_passwd.getText().toString();
         if ("yuchia".equals(username) && "000000".equals(password)) {
+            setResult(RESULT_OK);
             finish();
-
+        }else {
+            setResult(RESULT_CANCELED);
+            finish();
         }
-        }
-    public void cancel(View view){
-        Log.d("LoginActivity","cancel");
     }
-
 }
 
