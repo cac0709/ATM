@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         if (!login) {//如果未登入,則開啟LoginActivity
             Intent intent = new Intent(this, LoginActivity.class);
             //startActivity(intent);
-            startActivityForResult(intent,  RC_LOGIN);
+            startActivityForResult(intent, RC_LOGIN);
         }
 
     }
@@ -27,8 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_LOGIN) {
             if (resultCode != RESULT_OK) {
+                Intent nickname = new Intent(this, NicknameActivity.class);
+                startActivity(nickname);
                 finish();
+
+            } else {//TODO:CHECK AGE NICKNAME GENDER EXISITS
+
             }
+
         }
     }
 }
+
