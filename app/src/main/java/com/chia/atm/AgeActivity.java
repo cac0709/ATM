@@ -23,6 +23,9 @@ public class AgeActivity extends AppCompatActivity {
         Intent gender = new Intent(this,genderActivity.class);
         startActivity(gender);
     }
+    public void back(View view) {
+        finish();
+   }
 }
 
 
