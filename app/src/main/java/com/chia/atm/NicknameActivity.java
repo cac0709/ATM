@@ -16,7 +16,7 @@ public class NicknameActivity extends AppCompatActivity {
     public void next (View view){
         EditText NickName = findViewById(R.id.nickname);
         String nickname = NickName.getText().toString();
-        getSharedPreferences("Nickname",MODE_PRIVATE)
+        getSharedPreferences("user",MODE_PRIVATE)
                 .edit()
                 .putString("Nickname",nickname)
                 .apply();

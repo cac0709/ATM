@@ -16,7 +16,7 @@ public class AgeActivity extends AppCompatActivity {
     public void next (View view){
         EditText AGE = findViewById(R.id.age);
          float userage = Float.parseFloat(AGE.getText().toString());
-        getSharedPreferences("age",MODE_PRIVATE)
+        getSharedPreferences("user",MODE_PRIVATE)
                 .edit()
                 .putString("age", String.valueOf(userage))
                 .apply();
