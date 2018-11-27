@@ -2,8 +2,11 @@ package com.chia.atm;
 
 import android.content.Intent;
 import android.provider.ContactsContract;
+import android.support.v7.app.AlertController;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -25,11 +28,20 @@ public class MainActivity extends AppCompatActivity {
         if (!logon) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivityForResult(intent, RC_LOGIN);
+            RecyclerView recyclerView = findViewById(R.id.recycler);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(new FruitAdapter());
         }
-        listView();
+        //listView();
+    }
+    class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.FruitViewHolder>{
+
     }
 
-    private void listView() {
+
+
+        private void listView() {
         List<String> fruits = Arrays.asList("香蕉","鳳梨","芭樂");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,fruits);
         ListView listView = findViewById(R.id.list);
